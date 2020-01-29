@@ -1,0 +1,32 @@
+<div class="row mx-0">
+    <div class="col-12 pt-3 text-center">
+        <h3 class=" pt-2 d-inline-block" style="color: #373737;">
+            User's Information
+        </h3>
+        <mat-form-field class="pl-4" [floatLabel]="'never'">
+            <mat-label class="">Search User Name</mat-label>
+            <input matInput placeholder="" [formControl]="queryField" autocomplete="off" name="searchbox" id="Search">
+            <div></div>
+        </mat-form-field>
+        <div>
+
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row mx-0">
+            <div class="col-6 p-3" *ngFor="let user of modUsers">
+                <div class="mat-elevation-z1 p-3" matRipple style="color: #646464;cursor: pointer;background-color: #fefefa;" (click)="navigatePost(user.id)">
+                    <div class="d-inline-block">
+                        {{user.id}}.
+                    </div>
+                    <div class="d-inline-block pl-2">
+                        {{user.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12"  *ngIf="modUsers.length < 1">
+        <h4 style="color: #979797;"> No, result Found.!!! </h4>
+    </div>
+</div>
