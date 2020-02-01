@@ -36,6 +36,6 @@ export class UserListComponent implements OnInit {
   }
 
   navigatePost(userId) {
-    this.router.navigate(['user-post'], { queryParams: { post: userId, id: 7 } });
+    this.router.navigate(['user-post'], { queryParams: { userId} });
   }
 }
